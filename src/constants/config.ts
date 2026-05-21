@@ -40,14 +40,19 @@ type TConfig = {
 
 export const config: TConfig = {
   html: {
-    title: "John Doe — 3D Portfolio",
-    fullName: "John Doe",
-    email: "johndoe@mail.com",
+    title: "Mohd Sahil | Portfolio",
+    fullName: "Mohd Sahil",
+    email: "mohdsahil.job@gmail.com",
   },
+
   hero: {
-    name: "John Doe",
-    p: ["I develop 3D visuals, user", "interfaces and web applications"],
+    name: "Mohd Sahil",
+    p: [
+      "Full Stack Developer, Problem Solver",
+      "and Software Engineering Student",
+    ],
   },
+
   contact: {
     p: "Get in touch",
     h2: "Contact.",
@@ -56,39 +61,40 @@ export const config: TConfig = {
         span: "Your Name",
         placeholder: "What's your name?",
       },
-      email: { span: "Your Email", placeholder: "What's your email?" },
+
+      email: {
+        span: "Your Email",
+        placeholder: "What's your email?",
+      },
+
       message: {
         span: "Your Message",
         placeholder: "What do you want to say?",
       },
     },
   },
+
   sections: {
     about: {
       p: "Introduction",
       h2: "Overview.",
-      content: `I'm a skilled software developer with experience in TypeScript and
-      JavaScript, and expertise in frameworks like React, Node.js, and
-      Three.js. I'm a quick learner and collaborate closely with clients to
-      create efficient, scalable, and user-friendly solutions that solve
-      real-world problems. Let's work together to bring your ideas to life!`,
+      content: `I'm a Software Engineering student with a strong foundation in full-stack development, problem solving, and core computer science concepts. I enjoy building scalable web applications, AI-powered systems, and modern user interfaces using React, Node.js, Python, and MongoDB.`,
     },
+
     experience: {
-      p: "What I have done so far",
-      h2: "Work Experience.",
+      p: "What I have achieved",
+      h2: "Achievements.",
     },
+
     feedbacks: {
-      p: "What others say",
-      h2: "Testimonials.",
+      p: "My Certifications",
+      h2: "Certifications.",
     },
+
     works: {
-      p: "My work",
+      p: "My Projects",
       h2: "Projects.",
-      content: `Following projects showcases my skills and experience through
-    real-world examples of my work. Each project is briefly described with
-    links to code repositories and live demos in it. It reflects my
-    ability to solve complex problems, work with different technologies,
-    and manage projects effectively.`,
+      content: `These projects showcase my experience in full-stack development, AI systems, backend engineering, and modern web technologies. Each project demonstrates practical problem-solving and real-world implementation skills.`,
     },
   },
 };

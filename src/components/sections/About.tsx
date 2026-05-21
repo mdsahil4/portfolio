@@ -14,32 +14,34 @@ interface IServiceCard {
   icon: string;
 }
 
-const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => (
+const ServiceCard: React.FC<IServiceCard> = ({
+  index,
+  title,
+  icon,
+}) => (
   <Tilt
     glareEnable
-    tiltEnable
-    tiltMaxAngleX={30}
-    tiltMaxAngleY={30}
-    glareColor="#aaa6c3"
+    tiltMaxAngleX={25}
+    tiltMaxAngleY={25}
+    scale={1.02}
+    className="w-full xs:w-[250px]"
   >
-    <div className="max-w-[250px] w-full xs:w-[250px]">
-      <motion.div
-        variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-        className="green-pink-gradient shadow-card w-full rounded-[20px] p-[1px]"
-      >
-        <div className="bg-tertiary flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] px-12 py-5">
-          <img
-            src={icon}
-            alt="web-development"
-            className="h-16 w-16 object-contain"
-          />
+    <motion.div
+      variants={fadeIn("right", "spring", index * 0.3, 0.75)}
+      className="rounded-[20px] bg-gradient-to-r from-[#915EFF] to-[#6d28d9] p-[1px]"
+    >
+      <div className="flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] bg-[#151030] px-12 py-8">
+        <img
+          src={icon}
+          alt={title}
+          className="h-16 w-16 object-contain"
+        />
 
-          <h3 className="text-center text-[20px] font-bold text-white">
-            {title}
-          </h3>
-        </div>
-      </motion.div>
-    </div>
+        <h3 className="text-center text-[22px] font-bold text-white">
+          {title}
+        </h3>
+      </div>
+    </motion.div>
   </Tilt>
 );
 
@@ -50,14 +52,18 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="text-secondary mt-4 max-w-3xl text-[17px] leading-[30px]"
+        className="mt-6 max-w-4xl text-[18px] leading-[34px] text-secondary"
       >
         {config.sections.about.content}
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10 max-sm:justify-center">
         {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
+          <ServiceCard
+            key={service.title}
+            index={index}
+            {...service}
+          />
         ))}
       </div>
     </>
