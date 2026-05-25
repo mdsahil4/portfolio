@@ -30,10 +30,22 @@ export const navLinks: TNavLink[] = [
     id: "about",
     title: "About",
   },
+
+  {
+    id: "education",
+    title: "Education",
+  },
+
+  {
+    id: "skills",
+    title: "Skills",
+  },
+
   {
     id: "work",
     title: "Projects",
   },
+
   {
     id: "contact",
     title: "Contact",
@@ -104,7 +116,61 @@ const technologies: TTechnology[] = [
   },
 ];
 
-const experiences: TExperience[] = [];
+const experiences: TExperience[] = [
+  {
+    title: "Bachelor of Technology (CSE)",
+
+    companyName:
+      "Pranveer Singh Institute of Technology (PSIT)",
+
+    icon: web,
+
+    iconBg: "#00C2FF",
+
+    date: "2022 - 2026",
+
+    points: [
+      "📍 Kanpur, India",
+      "Currently Pursuing",
+    ],
+  },
+
+  {
+    title: "Intermediate (12th)",
+
+    companyName:
+      "Halim Muslim English School (CBSE)",
+
+    icon: mobile,
+
+    iconBg: "#8B5CF6",
+
+    date: "2021 - 2022",
+
+    points: [
+      "📍 Kanpur, Uttar Pradesh",
+      "Completed",
+    ],
+  },
+
+  {
+    title: "High School (10th)",
+
+    companyName:
+      "Halim Muslim English School (CBSE)",
+
+    icon: backend,
+
+    iconBg: "#10B981",
+
+    date: "2019 - 2020",
+
+    points: [
+      "📍 Kanpur, Uttar Pradesh",
+      "Completed",
+    ],
+  },
+];
 
 const testimonials: TTestimonial[] = [];
 
@@ -197,7 +263,7 @@ const projects: TProject[] = [
 export {
   services,
   technologies,
-  experiences,
+ experiences,
   testimonials,
   projects,
 };

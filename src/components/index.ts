@@ -1,36 +1,19 @@
-// @ts-nocheck
+export { default as Navbar } from "./layout/Navbar";
 
-import {
-  EarthCanvas,
-  BallCanvas,
-  ComputersCanvas,
-  StarsCanvas,
-} from "./canvas";
+export { default as Hero } from "./sections/Hero";
 
-import Hero from "./sections/Hero";
-import Navbar from "./layout/Navbar";
-import About from "./sections/About";
-import Skills from "./sections/Skills";
-import Achievements from "./sections/Achievements";
-import Works from "./sections/Works";
-import Contact from "./sections/Contact";
-import Footer from "./Footer";
+export { default as About } from "./sections/About";
 
-import CanvasLoader from "./layout/Loader";
+export { default as Skills } from "./sections/Skills";
 
-export {
-  Hero,
-  Navbar,
-  About,
-  Skills,
-  Achievements,
-  Works,
-  Contact,
-  Footer,
+export { default as Works } from "./sections/Works";
 
-  CanvasLoader,
-  EarthCanvas,
-  BallCanvas,
-  ComputersCanvas,
-  StarsCanvas,
-};
+export { default as Contact } from "./sections/Contact";
+
+export { default as Achievements } from "./sections/Achievements";
+
+export { default as Education } from "./sections/Education";
+
+export { default as Footer } from "./Footer";
+
+export { StarsCanvas } from "./canvas";

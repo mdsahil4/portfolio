@@ -11,6 +11,7 @@ import {
   Works,
   StarsCanvas,
   Footer,
+  Education,
 } from "./components";
 
 import { config } from "./constants/config";
@@ -25,7 +26,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
-        
+
         {/* Hero Section */}
         <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
           <Navbar />
@@ -34,6 +35,9 @@ const App = () => {
 
         {/* About */}
         <About />
+
+        {/* Education */}
+        <Education />
 
         {/* Projects */}
         <Works />
@@ -52,6 +56,7 @@ const App = () => {
 
         {/* Footer */}
         <Footer />
+
       </div>
     </BrowserRouter>
   );

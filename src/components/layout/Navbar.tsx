@@ -72,10 +72,10 @@ const Navbar = () => {
           }}
         >
           <img
-            src={profile}
-            alt="profile"
-            className="h-11 w-11 rounded-full border-2 border-[#915EFF] object-cover shadow-[0_0_20px_#915EFF]"
-          />
+  src={profile}
+  alt="logo"
+  className="h-14 w-14 rounded-full border-2 border-[#915EFF] object-cover object-[center_10%]"
+/>
 
           <p className="flex cursor-pointer text-[20px] font-bold text-white">
             <span className="text-[#915EFF] drop-shadow-[0_0_15px_#915EFF]">

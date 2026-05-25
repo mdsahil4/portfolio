@@ -46,12 +46,12 @@ export const config: TConfig = {
   },
 
   hero: {
-    name: "Mohd Sahil",
-    p: [
-      "Full Stack Developer, Problem Solver",
-      "and Software Engineering Student",
-    ],
-  },
+  name: "Mohd Sahil",
+  p: [
+    "Software Engineer, AI Enthusiast",
+    "and Full Stack Developer",
+  ],
+},
 
   contact: {
     p: "Get in touch",
