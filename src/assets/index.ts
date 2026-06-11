@@ -26,9 +26,9 @@ import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import humanoid from "./humanoid-robot.jpg";
+import ticket from "./ticket-system.jpg";
+import yolo from "./yolo-object.jpg";
 
 export {
   profile,
@@ -56,7 +56,7 @@ export {
   shopify,
   starbucks,
   tesla,
-  carrent,
-  jobit,
-  tripguide,
+  humanoid,
+  ticket,
+  yolo,
 };

@@ -20,9 +20,9 @@ import {
   mongodb,
   git,
   docker,
-  carrent,
-  jobit,
-  tripguide,
+  humanoid,
+  ticket,
+  yolo,
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
@@ -54,17 +54,17 @@ export const navLinks: TNavLink[] = [
 
 const services: TService[] = [
   {
-    title: "Full Stack Developer",
+    title: "Software Engineer",
     icon: web,
   },
 
   {
-    title: "React Developer",
+    title: "Full Stack Developer",
     icon: mobile,
   },
 
   {
-    title: "Backend Developer",
+    title: "Web Developer",
     icon: backend,
   },
 
@@ -198,7 +198,7 @@ const projects: TProject[] = [
       },
     ],
 
-    image: carrent,
+    image: humanoid,
 
     sourceCodeLink: "https://github.com/mdsahil4",
   },
@@ -226,7 +226,7 @@ const projects: TProject[] = [
       },
     ],
 
-    image: jobit,
+    image: ticket,
 
     sourceCodeLink: "https://github.com/mdsahil4",
   },
@@ -254,7 +254,7 @@ const projects: TProject[] = [
       },
     ],
 
-    image: tripguide,
+    image: yolo,
 
     sourceCodeLink: "https://github.com/mdsahil4",
   },

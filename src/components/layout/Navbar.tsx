@@ -57,8 +57,8 @@ const Navbar = () => {
         styles.paddingX
       } fixed top-0 z-20 flex w-full items-center py-5 transition-all duration-300 ${
         scrolled
-          ? "bg-black/30 backdrop-blur-md shadow-[0_0_20px_rgba(145,94,255,0.3)]"
-          : "bg-transparent"
+  ? "bg-[#050816] shadow-[0_0_25px_rgba(145,94,255,0.4)]"
+  : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between">

@@ -6,7 +6,6 @@ import { SectionWrapper } from "../../hoc";
 import { projects } from "../../constants";
 import { fadeIn } from "../../utils/motion";
 import { config } from "../../constants/config";
-import { Header } from "../atoms/Header";
 import { TProject } from "../../types";
 
 const ProjectCard: React.FC<{ index: number } & TProject> = ({
@@ -20,31 +19,48 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
   return (
     <motion.div
       variants={fadeIn("up", "spring", index * 0.3, 0.75)}
-      className="w-full sm:w-[360px]"
+      className="w-full h-full"
     >
       <Tilt
-        glareEnable={true}
-        glareMaxOpacity={0.25}
-        scale={1.02}
-        tiltMaxAngleX={20}
-        tiltMaxAngleY={20}
-        transitionSpeed={2500}
-      >
-        <div className="rounded-3xl border border-[#915EFF]/20 bg-[#151030] p-5 shadow-[0_0_20px_rgba(145,94,255,0.15)] transition duration-300 hover:shadow-[0_0_45px_rgba(145,94,255,0.45)]">
-          
+      className="h-full rounded-3xl"
+  glareEnable={false}
+  scale={1.01}
+  perspective={1200}
+  tiltMaxAngleX={4}
+  tiltMaxAngleY={4}
+  transitionSpeed={2000}
+>
+        <div
+          className="
+          group
+          h-full
+          flex
+          flex-col
+          rounded-3xl
+          border
+          border-white/10
+          bg-[#151030]
+          p-5
+          transition-all
+          duration-500
+          hover:-translate-y-3
+          hover:border-pink-500
+          hover:shadow-[0_0_50px_rgba(236,72,153,0.6)]
+        "
+        >
           {/* Project Image */}
           <div className="relative h-[230px] w-full overflow-hidden rounded-2xl">
             <img
               src={image}
               alt={name}
-              className="h-full w-full object-cover transition duration-500 hover:scale-110"
+              className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110"
             />
 
-            {/* GitHub Button */}
+            {/* GitHub Icon */}
             <div className="absolute inset-0 m-3 flex justify-end">
               <div
                 onClick={() => window.open(sourceCodeLink, "_blank")}
-                className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-black/70 backdrop-blur-md transition duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(145,94,255,0.7)]"
+                className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-black/70 backdrop-blur-md transition duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(236,72,153,0.8)]"
               >
                 <img
                   src={github}
@@ -55,43 +71,62 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
             </div>
           </div>
 
-          {/* Project Info */}
-          <div className="mt-6">
-            <h3 className="text-[24px] font-bold text-white">
-              {name}
-            </h3>
-
-            <p className="mt-3 text-[15px] leading-[26px] text-[#cbd5e1]">
-              {description}
-            </p>
-          </div>
-
           {/* Tags */}
-          <div className="mt-5 flex flex-wrap gap-3">
+          <div className="mt-5 flex flex-wrap gap-2">
             {tags.map((tag) => (
               <span
                 key={tag.name}
-                className="rounded-full border border-[#915EFF]/20 bg-[#1d1836] px-3 py-1 text-[13px] font-medium text-[#915EFF]"
+                className="rounded-lg bg-[#1d1836] px-3 py-1 text-xs font-medium text-[#c084fc]"
               >
-                #{tag.name}
+                {tag.name.toUpperCase()}
               </span>
             ))}
           </div>
 
-          {/* Buttons */}
-          <div className="mt-6 flex items-center gap-4">
-            <button
-              onClick={() => window.open(sourceCodeLink, "_blank")}
-              className="rounded-xl bg-[#915EFF] px-5 py-2 text-sm font-semibold text-white shadow-[0_0_20px_rgba(145,94,255,0.35)] transition duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(145,94,255,0.65)]"
-            >
-              GitHub
-            </button>
+          {/* Project Info */}
+          <div className="mt-5 flex-grow">
+            <p className="text-sm font-semibold uppercase text-pink-500">
+              &lt;/&gt; Project
+            </p>
 
-            <button
-              className="rounded-xl border border-white/20 px-5 py-2 text-sm font-semibold text-white transition duration-300 hover:bg-white hover:text-black"
-            >
-              Live Demo
-            </button>
+            <h3 className="mt-3 text-[30px] font-bold text-white">
+              {name}
+            </h3>
+
+            <p className="mt-4 text-[16px] leading-[30px] text-[#cbd5e1]">
+              {description}
+            </p>
+          </div>
+
+          {/* Bottom Section */}
+          <div className="mt-auto">
+            <div className="mt-6 h-[1px] w-full bg-white/10"></div>
+
+            <div className="mt-6">
+              <button
+                onClick={() => window.open(sourceCodeLink, "_blank")}
+                className="
+                  w-full
+                  rounded-xl
+                  border
+                  border-white/10
+                  bg-[#1d1836]
+                  py-3
+                  font-semibold
+                  text-white
+                  transition-all
+                  duration-300
+                  hover:bg-gradient-to-r
+                  hover:from-purple-600
+                  hover:to-pink-600
+                  hover:border-pink-500
+                  hover:shadow-[0_0_25px_rgba(236,72,153,0.7)]
+                  hover:scale-[1.02]
+                "
+              >
+                View Source Code
+              </button>
+            </div>
           </div>
         </div>
       </Tilt>
@@ -102,21 +137,39 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
 const Works = () => {
   return (
     <>
-      {/* Heading */}
-      <Header useMotion={true} {...config.sections.works} />
+      {/* Badge */}
+      <div className="text-center">
+        <div className="mb-6 flex justify-center">
+          <div className="inline-flex items-center gap-3 rounded-full border border-cyan-500/40 bg-cyan-500/10 px-8 py-3 shadow-[0_0_25px_rgba(34,211,238,0.15)]">
+            <div className="relative flex h-3 w-3">
+              <span className="h-3 w-3 rounded-full bg-[#915EFF] animate-pulse"></span>
+            </div>
 
-      {/* Description */}
-      <div className="flex w-full">
+            <span className="text-sm font-semibold uppercase tracking-[3px] text-cyan-300">
+              PROJECTS
+            </span>
+          </div>
+        </div>
+
+        {/* Heading */}
+        <h2 className="text-5xl font-black text-white md:text-6xl">
+          My{" "}
+          <span className="bg-gradient-to-r from-[#915EFF] to-[#6EE7FF] bg-clip-text text-transparent">
+            Projects
+          </span>
+        </h2>
+
+        {/* Description */}
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-4 max-w-4xl text-[18px] leading-[32px] text-[#cbd5e1]"
+          className="mx-auto mt-6 max-w-4xl text-center text-[18px] leading-[32px] text-[#cbd5e1]"
         >
           {config.sections.works.content}
         </motion.p>
       </div>
 
-      {/* Project Cards */}
-      <div className="mt-20 flex flex-wrap justify-center gap-10">
+      {/* Projects Grid */}
+      <div className="mt-20 grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-3 items-stretch">
         {projects.map((project, index) => (
           <ProjectCard
             key={`project-${index}`}

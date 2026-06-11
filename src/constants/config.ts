@@ -77,7 +77,7 @@ export const config: TConfig = {
   sections: {
     about: {
       p: "Introduction",
-      h2: "Overview.",
+      h2: "Overview",
       content: `I'm a Software Engineering student with a strong foundation in full-stack development, problem solving, and core computer science concepts. I enjoy building scalable web applications, AI-powered systems, and modern user interfaces using React, Node.js, Python, and MongoDB.`,
     },
 
@@ -92,9 +92,10 @@ export const config: TConfig = {
     },
 
     works: {
-      p: "My Projects",
-      h2: "Projects.",
-      content: `These projects showcase my experience in full-stack development, AI systems, backend engineering, and modern web technologies. Each project demonstrates practical problem-solving and real-world implementation skills.`,
-    },
+  p: "PROJECTS",
+  h2: "My Projects",
+  content:
+    "A collection of projects showcasing my expertise in Full Stack Development, AI, Backend Engineering, and Modern Web Technologies.",
+},
   },
 };
